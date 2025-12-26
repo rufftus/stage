@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contact</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="offres.html">Offres</a>
+            <a href="horaires.html">Horaires</a>
+            <a href="permis.html">Permis</a>
+            <a href="apropos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <form onsubmit="return envoyerFormulaire()">
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button>Envoyer</button>
+    </form>
+
+    <p id="confirmation"></p>
+
+    <footer>
+        © 2025 Auto-École Horizon
+    </footer>
+
+</body>
+
+</html>
