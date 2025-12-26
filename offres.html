@@ -3,48 +3,83 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nos Offres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-École Horizon | Nos Offres</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Nos Offres</h1>
+        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="horaires.html">Horaires</a>
-            <a href="permis.html">Permis</a>
-            <a href="apropos.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">Offres</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
+                <li><a href="permis.html">Permis</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="cards">
-        <div class="card">
-            <h3>Permis B</h3>
-            <p>Code + 20h de conduite</p>
-            <strong>1200€</strong>
-        </div>
+    <div class="page-title">
+        <h2>Nos Formules</h2>
+        <p>Des tarifs transparents, sans frais cachés.</p>
+    </div>
 
-        <div class="card">
-            <h3>Conduite accompagnée</h3>
-            <p>Dès 15 ans</p>
-            <strong>1400€</strong>
-        </div>
+    <section class="bloc">
+        <div class="cards">
+            <div class="card">
+                <h3>Permis B Classique</h3>
+                <p>L'essentiel pour réussir</p>
+                <strong>1200€</strong>
+                <ul style="list-style:none; text-align:left; padding:10px;">
+                    <li><i class="fas fa-check" style="color:green"></i> Frais de dossier</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Code en ligne illimité</li>
+                    <li><i class="fas fa-check" style="color:green"></i> 20h de conduite</li>
+                    <li><i class="fas fa-check" style="color:green"></i> 1 présentation examen</li>
+                </ul>
+                <a href="contact.html" class="btn-hero" style="font-size:0.9rem; margin-top:20px;">Je m'inscris</a>
+            </div>
 
-        <div class="card">
-            <h3>Permis accéléré</h3>
-            <p>Formation intensive</p>
-            <strong>1800€</strong>
+            <div class="card" style="border-top: 5px solid var(--accent); transform: scale(1.02);">
+                <h3 style="color:var(--accent)">Conduite Accompagnée</h3>
+                <p>Dès 15 ans (AAC)</p>
+                <strong style="color:var(--accent)">1400€</strong>
+                <ul style="list-style:none; text-align:left; padding:10px;">
+                    <li><i class="fas fa-check" style="color:green"></i> Tous les avantages Permis B</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Rendez-vous pédagogiques</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Assurance moins chère</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Meilleur taux de réussite</li>
+                </ul>
+                <a href="contact.html" class="btn-hero"
+                    style="background:var(--accent); font-size:0.9rem; margin-top:20px;">Le Top choix</a>
+            </div>
+
+            <div class="card">
+                <h3>Permis Accéléré</h3>
+                <p>Rapide et intensif</p>
+                <strong>1800€</strong>
+                <ul style="list-style:none; text-align:left; padding:10px;">
+                    <li><i class="fas fa-check" style="color:green"></i> Formation en 15 jours</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Conduite tous les jours</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Priorité aux examens</li>
+                    <li><i class="fas fa-check" style="color:green"></i> Code accéléré inclus</li>
+                </ul>
+                <a href="contact.html" class="btn-hero" style="font-size:0.9rem; margin-top:20px;">Je fonce</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        © 2025 Auto-École Horizon
+        <p>© 2025 Auto-École Horizon. Tous droits réservés.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>

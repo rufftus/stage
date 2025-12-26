@@ -3,38 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Auto-École Horizon</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Contact</h1>
+        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="horaires.html">Horaires</a>
-            <a href="permis.html">Permis</a>
-            <a href="apropos.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">Offres</a></li>
+                <li><a href="horaires.html">Infos</a></li>
+                <li><a href="permis.html">Permis</a></li>
+                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+            </ul>
         </nav>
     </header>
 
-    <form onsubmit="return envoyerFormulaire()">
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button>Envoyer</button>
-    </form>
+    <div class="page-title">
+        <h2>Contactez-nous</h2>
+        <p>Une question ? Envie de vous inscrire ?</p>
+    </div>
 
-    <p id="confirmation"></p>
+    <section class="bloc">
+        <form action="https://formspree.io/f/TON_CODE_FORMSPREE" method="POST">
+
+            <label>Nom complet</label>
+            <input type="text" name="nom" placeholder="Votre nom" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required>
+
+            <label>Sujet</label>
+            <input type="text" name="sujet" placeholder="Renseignement, Inscription..." required>
+
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+
+            <div style="margin-bottom: 20px; display: flex; align-items: start; gap: 10px;">
+                <input type="checkbox" name="rgpd" id="rgpd" required
+                    style="width: 20px; height: 20px; margin-top: 5px;">
+                <label for="rgpd" style="font-weight: 400; font-size: 0.9rem;">
+                    J'accepte que mes informations soient utilisées pour me recontacter.
+                    <a href="mentions-legales.html" style="color: var(--primary);">Voir mentions légales</a>.
+                </label>
+            </div>
+
+            <button type="submit">Envoyer le message</button>
+        </form>
+    </section>
 
     <footer>
-        © 2025 Auto-École Horizon
+        <p>
+            © 2025 Auto-École Horizon. <br>
+            <a href="mentions-legales.html" style="color: #94a3b8; text-decoration: underline;">Mentions Légales</a>
+        </p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>

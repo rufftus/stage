@@ -3,39 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nos Permis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-École Horizon | Les Permis</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Nos Permis</h1>
+        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="horaires.html">Horaires</a>
-            <a href="permis.html">Permis</a>
-            <a href="apropos.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">Offres</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
+                <li><a href="permis.html">Permis</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+            </ul>
         </nav>
     </header>
 
+    <div class="page-title">
+        <h2>Nos Formations</h2>
+    </div>
+
     <section class="bloc">
-        <h2>Permis B</h2>
-        <p>Boîte manuelle ou automatique</p>
+        <div class="cards">
+            <div class="card" style="text-align:left;">
+                <h3><i class="fas fa-car"></i> Permis B (Traditionnel)</h3>
+                <p>Le permis classique. Formation théorique (code) et pratique (conduite) pour apprendre à circuler en
+                    toute sécurité.</p>
+                <p>Dispo en <strong>Boîte Manuelle</strong> ou <strong>Automatique</strong>.</p>
+            </div>
 
-        <h2>Conduite accompagnée</h2>
-        <p>Apprentissage dès 15 ans</p>
+            <div class="card" style="text-align:left;">
+                <h3><i class="fas fa-users"></i> Conduite Accompagnée (AAC)</h3>
+                <p>Accessible dès 15 ans. Après une formation initiale, l'élève conduit avec ses parents. </p>
+                <p>Permet d'acquérir plus d'expérience, réduit la période probatoire à 2 ans et diminue le coût de
+                    l'assurance.</p>
+            </div>
 
-        <h2>Conduite supervisée</h2>
-        <p>Idéal après un premier échec</p>
+            <div class="card" style="text-align:left;">
+                <h3><i class="fas fa-sync"></i> Conduite Supervisée</h3>
+                <p>Pour les élèves de plus de 18 ans. Idéal pour ceux qui veulent conduire avec un accompagnateur avant
+                    de passer l'examen ou après un échec, sans limite de durée ni de kilométrage.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        © 2025 Auto-École Horizon
+        <p>© 2025 Auto-École Horizon. Tous droits réservés.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>

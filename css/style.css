@@ -1,54 +1,540 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+/* --- IMPORT POLICE & ICONES --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+    --primary: #2563eb;
+    /* Bleu vif */
+    --primary-dark: #1d4ed8;
+    /* Bleu plus foncé pour le survol */
+    --secondary: #1e293b;
+    /* Gris nuit */
+    --accent: #f59e0b;
+    /* Orange dynamique */
+    --light: #f8fafc;
+    /* Fond très clair */
+    --text: #334155;
+    /* Couleur texte standard */
+    --text-light: #64748b;
+    /* Texte secondaire */
+    --white: #ffffff;
+    /* NOUVEAU : Ombres plus douces */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* NOUVEAU : Défilement fluide sur toute la page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    /* Meilleure lisibilité */
+    background-color: var(--light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Évite les barres de défilement horizontales indésirables */
+}
+
+/* --- HEADER --- */
 header {
-    background: #1e293b;
-    color: white;
-    padding: 15px;
+    background: rgba(30, 41, 59, 0.95);
+    /* NOUVEAU : Légère transparence */
+    backdrop-filter: blur(10px);
+    /* NOUVEAU : Effet de flou moderne derrière le header */
+    color: var(--white);
+    padding: 1rem 5%;
+    /* Utilisation de % pour une meilleure marge latérale */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.5px;
+}
+
+header h1 i {
+    color: var(--accent);
+    margin-right: 12px;
+    font-size: 1.4rem;
+}
+
+/* Icône orange */
+
+/* Navigation Desktop */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
 }
 
 nav a {
-    color: white;
-    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    /* Blanc légèrement cassé */
     text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+/* NOUVEAU : Petit soulignement animé au survol */
+nav a:not(.cta-btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav a:not(.cta-btn):hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--white);
+}
+
+/* Bouton "Inscription" dans le menu */
+nav a.cta-btn {
+    background: var(--primary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    color: var(--white) !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    /* Ombre bleue */
+}
+
+nav a.cta-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    /* Ombre orange au survol */
+}
+
+/* Menu Burger (Mobile) */
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.burger:hover {
+    color: var(--accent);
+}
+
+/* --- HERO SECTION (ANIMÉE) --- */
 .hero {
-    background: #2563eb;
-    color: white;
-    padding: 80px;
+    /* Image de fond avec effet "Parallax fixed" */
+    background: linear-gradient(to bottom, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.6)),
+        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* NOUVEAU : L'image reste fixe quand on défile */
+    color: var(--white);
+    padding: 160px 20px 120px;
+    /* Plus d'espace en haut */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NOUVEAU : Animation d'entrée pour le texte */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out both;
+    /* L'animation se lance au chargement */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 700px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+    /* Délai de 0.3s */
+}
+
+/* --- BOUTONS GÉNÉRAUX (EFFET BRILLANCE) --- */
+.btn-hero {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    /* Important pour l'effet de brillance */
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5);
+    animation: fadeInUp 1s ease-out 0.6s both;
+    /* Délai de 0.6s */
+}
+
+/* NOUVEAU : L'effet "coup de projecteur" au survol */
+.btn-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.6s ease-in-out;
+}
+
+.btn-hero:hover::before {
+    left: 100%;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: var(--primary);
+    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.5);
+}
+
+/* --- TITRES & BLOCS --- */
+.page-title {
+    background: var(--secondary);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 50px;
+    /* NOUVEAU : Petit motif de fond subtil */
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.page-title p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .bloc {
-    padding: 40px;
+    padding: 80px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
 }
 
+.bloc h2 {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.bloc h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    /* Ligne orange */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* --- CARTES AMÉLIORÉES --- */
 .cards {
-    display: flex;
-    gap: 20px;
-    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Cartes un peu plus larges */
+    gap: 40px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 260px;
-}
-
-form {
-    max-width: 400px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-footer {
-    background: #1e293b;
-    color: white;
+    background: var(--white);
+    padding: 50px 35px;
+    border-radius: 20px;
+    /* Angles plus arrondis */
+    box-shadow: var(--shadow-sm);
     text-align: center;
-    padding: 10px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* NOUVEAU : Transition "rebond" */
+    border-bottom: none;
+    /* On retire la bordure du bas de la version précédente */
+    position: relative;
+    top: 0;
+}
+
+/* NOUVEAU : Une fine ligne colorée en haut de toutes les cartes */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 0 0 10px 10px;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    /* Monte plus haut */
+    box-shadow: var(--shadow-lg);
+}
+
+.card i {
+    margin-bottom: 25px;
+    /* NOUVEAU : Petit fond circulaire derrière l'icône */
+    background: rgba(37, 99, 235, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.card:hover i {
+    background: var(--primary);
+    color: var(--white) !important;
+    transform: rotateY(180deg);
+}
+
+/* L'icône tourne au survol */
+
+.card h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--text-light);
+}
+
+.card strong {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin: 25px 0;
+    font-weight: 800;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+}
+
+.card ul li i {
+    margin-right: 10px;
+    font-size: 1rem;
+    margin-bottom: 0;
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+/* --- FORMULAIRE (FOCUS ANIMÉ) --- */
+form {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 25px;
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* NOUVEAU : Effet quand on clique dans le champ */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    /* Halo bleu */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+}
+
+button[type="submit"]:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.7);
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: auto;
+    background: var(--secondary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+footer p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        /* Juste sous le header */
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        /* Masqué par défaut */
+        transition: all 0.5s ease-in-out;
+        box-shadow: var(--shadow-lg);
+    }
+
+    nav ul.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        /* Déroulé */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    nav a.cta-btn {
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    nav a:not(.cta-btn)::after {
+        display: none;
+        /* Pas de soulignement sur mobile */
+    }
+
+    .hero {
+        padding: 140px 20px 80px;
+        background-attachment: scroll;
+        /* Pas de parallax sur mobile (perf) */
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .page-title h2 {
+        font-size: 2.2rem;
+    }
+
+    .bloc {
+        padding: 50px 20px;
+    }
+
+    form {
+        padding: 30px 20px;
+    }
 }

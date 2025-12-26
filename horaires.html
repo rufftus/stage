@@ -3,38 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Horaires</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-École Horizon | Horaires</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Horaires</h1>
+        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="horaires.html">Horaires</a>
-            <a href="permis.html">Permis</a>
-            <a href="apropos.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">Offres</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
+                <li><a href="permis.html">Permis</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="bloc">
-        <h2>Horaires d'ouverture</h2>
-        <p>Lundi – Vendredi : 9h à 18h</p>
-        <p>Samedi : 9h à 13h</p>
-        <p>Dimanche : fermé</p>
+    <div class="page-title">
+        <h2>Horaires & Accès</h2>
+    </div>
 
-        <h2>Heures de conduite</h2>
-        <p>Sur rendez-vous du lundi au samedi</p>
+    <section class="bloc">
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-clock fa-3x" style="color:var(--primary)"></i>
+                <h3>Bureau (Secrétariat)</h3>
+                <p style="margin-top:20px;">
+                    <strong>Lundi – Vendredi</strong> <br> 10h00 – 12h00 <br> 14h00 – 19h00
+                </p>
+                <p>
+                    <strong>Samedi</strong> <br> 10h00 – 13h00
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-car fa-3x" style="color:var(--primary)"></i>
+                <h3>Leçons de conduite</h3>
+                <p style="margin-top:20px;">
+                    Nos moniteurs sont disponibles sur une plage horaire étendue :
+                </p>
+                <p>
+                    <strong>Du Lundi au Samedi</strong> <br> De 08h00 à 20h00
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-map-marker-alt fa-3x" style="color:var(--primary)"></i>
+                <h3>Nous trouver</h3>
+                <p style="margin-top:20px;">
+                    12 Rue de la République <br> 75000 Ville-Exemple
+                </p>
+                <a href="contact.html" class="btn-hero" style="font-size:0.8rem; margin-top:15px;">Nous contacter</a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        © 2025 Auto-École Horizon
+        <p>© 2025 Auto-École Horizon. Tous droits réservés.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
