@@ -3,43 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Auto-École Horizon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-École Horizon | Accueil</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Auto-École Horizon</h1>
+        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="horaires.html">Horaires</a>
-            <a href="permis.html">Permis</a>
-            <a href="apropos.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">Offres</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
+                <li><a href="permis.html">Permis</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html" class="cta-btn">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Votre permis en toute sérénité</h2>
         <p>Une formation sérieuse, humaine et efficace</p>
+        <a href="offres.html" class="btn-hero">Découvrir nos offres</a>
     </section>
 
     <section class="bloc">
         <h2>Pourquoi nous choisir ?</h2>
-        <ul>
-            <li>✔ Moniteurs diplômés</li>
-            <li>✔ Véhicules récents</li>
-            <li>✔ Suivi personnalisé</li>
-            <li>✔ Taux de réussite élevé</li>
-        </ul>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-user-graduate fa-2x"></i>
+                <h3>Moniteurs diplômés</h3>
+                <p>Une équipe pédagogique experte et bienveillante.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-car fa-2x"></i>
+                <h3>Véhicules récents</h3>
+                <p>Apprenez à conduire sur des véhicules modernes et sûrs.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line fa-2x"></i>
+                <h3>Réussite élevée</h3>
+                <p>Nous vous accompagnons jusqu'à l'obtention du permis.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        © 2025 Auto-École Horizon
+        <p>© 2025 Auto-École Horizon. Tous droits réservés.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -18,44 +18,52 @@
             <ul id="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="offres.html">Offres</a></li>
-                <li><a href="horaires.html">Infos</a></li>
+                <li><a href="horaires.html">Horaires</a></li>
                 <li><a href="permis.html">Permis</a></li>
-                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html" class="cta-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="page-title">
         <h2>Contactez-nous</h2>
-        <p>Une question ? Envie de vous inscrire ?</p>
+        <p>Nous sommes joignables directement par téléphone ou email.</p>
     </div>
 
     <section class="bloc">
-        <form action="https://formspree.io/f/TON_CODE_FORMSPREE" method="POST">
+        <div class="cards" style="justify-content: center;">
 
-            <label>Nom complet</label>
-            <input type="text" name="nom" placeholder="Votre nom" required>
-
-            <label>Email</label>
-            <input type="email" name="email" placeholder="votre@email.com" required>
-
-            <label>Sujet</label>
-            <input type="text" name="sujet" placeholder="Renseignement, Inscription..." required>
-
-            <label>Message</label>
-            <textarea name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
-
-            <div style="margin-bottom: 20px; display: flex; align-items: start; gap: 10px;">
-                <input type="checkbox" name="rgpd" id="rgpd" required
-                    style="width: 20px; height: 20px; margin-top: 5px;">
-                <label for="rgpd" style="font-weight: 400; font-size: 0.9rem;">
-                    J'accepte que mes informations soient utilisées pour me recontacter.
-                    <a href="mentions-legales.html" style="color: var(--primary);">Voir mentions légales</a>.
-                </label>
+            <div class="card">
+                <i class="fas fa-phone-alt fa-3x" style="color:var(--primary)"></i>
+                <h3>Par Téléphone</h3>
+                <p>Du lundi au vendredi de 10h à 19h</p>
+                <a href="tel:0123456789" class="btn-hero" style="margin-top:15px; font-size: 0.9rem;">
+                    01 23 45 67 89
+                </a>
             </div>
 
-            <button type="submit">Envoyer le message</button>
-        </form>
+            <div class="card">
+                <i class="fas fa-envelope fa-3x" style="color:var(--accent)"></i>
+                <h3>Par Email</h3>
+                <p>Réponse sous 24h ouvrées</p>
+                <a href="mailto:contact@autoecole-horizon.com" class="btn-hero"
+                    style="margin-top:15px; font-size: 0.9rem; background-color: var(--secondary);">
+                    Envoyer un mail
+                </a>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-map-marker-alt fa-3x" style="color:var(--primary)"></i>
+                <h3>Sur Place</h3>
+                <p>12 Rue de la République<br>75000 Ville-Exemple</p>
+                <a href="horaires.html"
+                    style="color: var(--primary); font-weight: bold; margin-top: 10px; display:inline-block;">
+                    Voir les horaires <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
     </section>
 
     <footer>
