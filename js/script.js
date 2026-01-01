@@ -6,3 +6,12 @@ function toggleMenu() {
         nav.classList.toggle('active');
     }
 }
+// Fermer le menu si on clique sur un lien (pratique sur mobile)
+document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const nav = document.getElementById('nav-links');
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+        }
+    });
+});

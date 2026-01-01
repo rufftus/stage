@@ -1,27 +1,32 @@
 /* --- IMPORT POLICE & ICONES --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* --- VARIABLES --- */
+/* --- VARIABLES (NOUVELLE CHARTE : VERT / BLANC / TOUCHE DE BLEU) --- */
 :root {
-    --primary: #2563eb;
-    /* Bleu vif */
-    --primary-dark: #1d4ed8;
-    /* Bleu plus foncé pour le survol */
-    --secondary: #1e293b;
-    /* Gris nuit */
-    --accent: #f59e0b;
-    /* Orange dynamique */
+    /* --primary devient VERT VIF (Couleur principale : action, réussite) */
+    --primary: #16a34a;
+    --primary-dark: #15803d;
+    /* Vert plus foncé au survol */
+
+    /* --accent devient BLEU CIEL (Touche de couleur secondaire) */
+    --accent: #3b82f6;
+
+    --secondary: #0f172a;
+    /* Bleu nuit très foncé pour le texte sombre/footer */
+
     --light: #f8fafc;
-    /* Fond très clair */
-    --text: #334155;
-    /* Couleur texte standard */
-    --text-light: #64748b;
-    /* Texte secondaire */
+    /* Fond blanc cassé très clair */
     --white: #ffffff;
-    /* NOUVEAU : Ombres plus douces */
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* Blanc pur pour les cartes */
+    --text: #334155;
+    /* Gris foncé pour le texte courant */
+    --text-light: #64748b;
+    /* Gris clair pour les sous-textes */
+
+    /* Ombres douces */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /* --- RESET & BASE --- */
@@ -31,7 +36,6 @@
     padding: 0;
 }
 
-/* NOUVEAU : Défilement fluide sur toute la page */
 html {
     scroll-behavior: smooth;
 }
@@ -40,24 +44,20 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--text);
     line-height: 1.7;
-    /* Meilleure lisibilité */
     background-color: var(--light);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    /* Évite les barres de défilement horizontales indésirables */
 }
 
-/* --- HEADER --- */
+/* --- HEADER & LOGO --- */
 header {
-    background: rgba(30, 41, 59, 0.95);
-    /* NOUVEAU : Légère transparence */
+    background: rgba(255, 255, 255, 0.98);
+    /* Header blanc presque opaque */
     backdrop-filter: blur(10px);
-    /* NOUVEAU : Effet de flou moderne derrière le header */
-    color: var(--white);
-    padding: 1rem 5%;
-    /* Utilisation de % pour une meilleure marge latérale */
+    color: var(--secondary);
+    padding: 0.8rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,54 +65,54 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--white);
+/* Style spécifique pour le logo image */
+.logo {
+    max-height: 55px;
+    /* Hauteur maximale pour ne pas déformer le header */
+    width: auto;
+    display: block;
+}
+
+/* Le lien autour du logo */
+.logo-link {
+    text-decoration: none;
     display: flex;
     align-items: center;
-    letter-spacing: -0.5px;
 }
-
-header h1 i {
-    color: var(--accent);
-    margin-right: 12px;
-    font-size: 1.4rem;
-}
-
-/* Icône orange */
 
 /* Navigation Desktop */
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
 nav a {
-    color: rgba(255, 255, 255, 0.85);
-    /* Blanc légèrement cassé */
+    color: var(--secondary);
+    /* Navigation sombre */
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     position: relative;
+    padding: 5px 0;
 }
 
-/* NOUVEAU : Petit soulignement animé au survol */
+/* Soulignement VERT au survol */
 nav a:not(.cta-btn)::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
-    background: var(--accent);
+    height: 3px;
+    background: var(--primary);
     transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
 nav a:not(.cta-btn):hover::after {
@@ -120,52 +120,43 @@ nav a:not(.cta-btn):hover::after {
 }
 
 nav a:hover {
-    color: var(--white);
+    color: var(--primary);
 }
 
-/* Bouton "Inscription" dans le menu */
+/* Bouton Inscription (VERT) */
 nav a.cta-btn {
     background: var(--primary);
-    padding: 10px 25px;
+    padding: 12px 28px;
     border-radius: 50px;
     color: var(--white) !important;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    /* Ombre bleue */
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);
 }
 
 nav a.cta-btn:hover {
-    background: var(--accent);
+    background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-    /* Ombre orange au survol */
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35);
 }
 
-/* Menu Burger (Mobile) */
+/* Menu Burger */
 .burger {
     display: none;
     cursor: pointer;
-    font-size: 1.6rem;
-    color: var(--white);
-    transition: color 0.3s;
+    font-size: 1.8rem;
+    color: var(--secondary);
 }
 
-.burger:hover {
-    color: var(--accent);
-}
-
-/* --- HERO SECTION (ANIMÉE) --- */
+/* --- HERO SECTION --- */
 .hero {
-    /* Image de fond avec effet "Parallax fixed" */
-    background: linear-gradient(to bottom, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.6)),
-        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80');
+    /* Image de fond, avec une superposition dégradée VERT/BLEU nuit sombre */
+    background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.85), rgba(22, 163, 74, 0.4)),
+        url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* NOUVEAU : L'image reste fixe quand on défile */
     color: var(--white);
-    padding: 160px 20px 120px;
-    /* Plus d'espace en haut */
+    padding: 180px 20px 140px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -173,7 +164,6 @@ nav a.cta-btn:hover {
     justify-content: center;
 }
 
-/* NOUVEAU : Animation d'entrée pour le texte */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -189,26 +179,26 @@ nav a.cta-btn:hover {
 .hero h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
+    font-weight: 800;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out both;
-    /* L'animation se lance au chargement */
+    animation: fadeInUp 0.8s ease-out both;
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
     max-width: 700px;
-    animation: fadeInUp 1s ease-out 0.3s both;
-    /* Délai de 0.3s */
+    font-weight: 500;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-/* --- BOUTONS GÉNÉRAUX (EFFET BRILLANCE) --- */
+/* --- BOUTONS PRINCIPAUX (VERT) --- */
 .btn-hero {
     display: inline-block;
-    padding: 15px 40px;
-    background: var(--accent);
+    padding: 18px 45px;
+    background: var(--primary);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
@@ -217,61 +207,50 @@ nav a.cta-btn:hover {
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
-    /* Important pour l'effet de brillance */
     transition: all 0.4s ease;
-    box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5);
-    animation: fadeInUp 1s ease-out 0.6s both;
-    /* Délai de 0.6s */
-}
-
-/* NOUVEAU : L'effet "coup de projecteur" au survol */
-.btn-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: all 0.6s ease-in-out;
-}
-
-.btn-hero:hover::before {
-    left: 100%;
+    box-shadow: 0 10px 20px -10px rgba(22, 163, 74, 0.5);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    border: 2px solid transparent;
 }
 
 .btn-hero:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: var(--primary);
-    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.5);
+    transform: translateY(-5px);
+    background: var(--primary-dark);
+    box-shadow: 0 15px 30px -10px rgba(22, 163, 74, 0.6);
 }
 
-/* --- TITRES & BLOCS --- */
+/* --- TITRES DE PAGE & BLOCS --- */
 .page-title {
-    background: var(--secondary);
-    color: var(--white);
+    background: var(--white);
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     margin-bottom: 50px;
-    /* NOUVEAU : Petit motif de fond subtil */
-    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-    background-size: 30px 30px;
+    border-bottom: 1px solid #e2e8f0;
+    /* Petit motif de fond subtil */
+    background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px), radial-gradient(var(--primary) 0.5px, var(--white) 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    background-color: rgba(22, 163, 74, 0.03);
+    /* Très léger fond vert */
 }
 
 .page-title h2 {
     font-size: 3rem;
     font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 15px;
 }
 
 .page-title p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.2rem;
-    margin-top: 10px;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .bloc {
     padding: 80px 5%;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
@@ -282,190 +261,192 @@ nav a.cta-btn:hover {
     margin-bottom: 60px;
     font-size: 2.2rem;
     font-weight: 700;
-    position: relative;
 }
 
+/* Soulignement BLEU CIEL pour les titres de section */
 .bloc h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
     background: var(--accent);
-    /* Ligne orange */
-    margin: 15px auto 0;
-    border-radius: 2px;
+    margin: 20px auto 0;
+    border-radius: 10px;
 }
 
-/* --- CARTES AMÉLIORÉES --- */
+/* --- CARTES (Le cœur du design blanc/vert/bleu) --- */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* Cartes un peu plus larges */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
+    align-items: start;
 }
 
 .card {
     background: var(--white);
-    padding: 50px 35px;
-    border-radius: 20px;
-    /* Angles plus arrondis */
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* NOUVEAU : Transition "rebond" */
-    border-bottom: none;
-    /* On retire la bordure du bas de la version précédente */
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: var(--shadow-md);
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    top: 0;
+    border: 2px solid transparent;
+    /* Préparation pour le survol */
+    overflow: hidden;
 }
 
-/* NOUVEAU : Une fine ligne colorée en haut de toutes les cartes */
+/* Ligne supérieure VERTE par défaut */
 .card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 20px;
-    right: 20px;
-    height: 4px;
+    left: 0;
+    right: 0;
+    height: 6px;
     background: var(--primary);
-    border-radius: 0 0 10px 10px;
 }
 
 .card:hover {
-    transform: translateY(-15px);
-    /* Monte plus haut */
+    transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+    /* Bordure BLEUE au survol */
 }
 
+/* Icones : Cercle vert, icone blanche */
 .card i {
     margin-bottom: 25px;
-    /* NOUVEAU : Petit fond circulaire derrière l'icône */
-    background: rgba(37, 99, 235, 0.1);
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
+    background: var(--primary);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 20px;
+    /* Carré arrondi moderne */
     transition: all 0.3s ease;
+    color: var(--white) !important;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
 }
 
 .card:hover i {
-    background: var(--primary);
-    color: var(--white) !important;
-    transform: rotateY(180deg);
+    background: var(--accent);
+    /* L'icône devient BLEUE au survol */
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
-
-/* L'icône tourne au survol */
 
 .card h3 {
     color: var(--secondary);
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
 .card p {
     color: var(--text-light);
+    font-size: 1rem;
 }
 
+/* Prix en BLEU CIEL */
 .card strong {
     display: block;
-    font-size: 2.5rem;
-    color: var(--primary);
+    font-size: 2.2rem;
+    color: var(--accent);
     margin: 25px 0;
     font-weight: 800;
 }
 
 .card ul li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     color: var(--text);
     display: flex;
     align-items: center;
+    font-weight: 500;
 }
 
+/* Petites coches vertes */
 .card ul li i {
-    margin-right: 10px;
-    font-size: 1rem;
+    margin-right: 15px;
+    font-size: 1.1rem;
     margin-bottom: 0;
     background: none;
     width: auto;
     height: auto;
+    color: var(--primary) !important;
+    /* Toujours vert */
+    box-shadow: none;
+    border-radius: 0;
 }
 
-/* --- FORMULAIRE (FOCUS ANIMÉ) --- */
-form {
-    background: var(--white);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    max-width: 700px;
-    margin: 0 auto;
+/* --- MISE EN AVANT (Offre du milieu) --- */
+.card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--accent);
+    /* Bordure bleue permanente */
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--secondary);
+.card.featured::before {
+    background: var(--accent);
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 25px;
-    border: 2px solid #e2e8f0;
-    background: #f8fafc;
-    border-radius: 12px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+/* Ligne supérieure bleue */
+.card.featured h3,
+.card.featured strong {
+    color: var(--accent);
 }
 
-/* NOUVEAU : Effet quand on clique dans le champ */
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
-    /* Halo bleu */
+.card.featured .btn-hero {
+    background: var(--accent);
+    box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.5);
 }
 
-button[type="submit"] {
-    width: 100%;
-    padding: 18px;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 12px;
-    font-size: 1.2rem;
+.card.featured .btn-hero:hover {
+    background: #2563eb;
+}
+
+/* --- CONTACT SPÉCIFIQUE --- */
+.card a[href^="tel"],
+.card a[href^="mailto"] {
+    font-size: 1.1rem;
     font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
-}
-
-button[type="submit"]:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.7);
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 /* --- FOOTER --- */
 footer {
     margin-top: auto;
     background: var(--secondary);
-    color: var(--text-light);
+    color: #94a3b8;
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 footer p {
-    font-size: 0.95rem;
-    opacity: 0.8;
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
 }
 
-/* --- RESPONSIVE MOBILE --- */
+/* Liens footer en BLEU CIEL */
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .burger {
         display: block;
@@ -478,52 +459,52 @@ footer p {
     nav ul {
         position: absolute;
         top: 100%;
-        /* Juste sous le header */
         left: 0;
         right: 0;
-        background: var(--secondary);
+        background: var(--white);
         flex-direction: column;
-        text-align: center;
-        padding: 40px 0;
+        padding: 40px 20px;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        /* Masqué par défaut */
         transition: all 0.5s ease-in-out;
         box-shadow: var(--shadow-lg);
+        border-top: 1px solid #eee;
+        align-items: stretch;
     }
 
     nav ul.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        /* Déroulé */
     }
 
     nav a {
-        display: block;
-        padding: 10px 0;
+        color: var(--secondary);
+        padding: 15px 0;
         font-size: 1.2rem;
+        text-align: center;
+        border-bottom: 1px solid #f1f5f9;
     }
 
     nav a.cta-btn {
         margin-top: 20px;
-        display: inline-block;
+        display: block;
     }
 
     nav a:not(.cta-btn)::after {
         display: none;
-        /* Pas de soulignement sur mobile */
     }
 
+    /* Pas de soulignement sur mobile */
+
     .hero {
-        padding: 140px 20px 80px;
+        padding: 160px 20px 100px;
         background-attachment: scroll;
-        /* Pas de parallax sur mobile (perf) */
     }
 
     .hero h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
-    .hero p {
-        font-size: 1.1rem;
+    .page-title {
+        padding: 60px 20px;
     }
 
     .page-title h2 {
@@ -531,10 +512,14 @@ footer p {
     }
 
     .bloc {
-        padding: 50px 20px;
+        padding: 60px 20px;
     }
 
-    form {
-        padding: 30px 20px;
+    .cards {
+        gap: 30px;
+    }
+
+    .card.featured {
+        transform: none;
     }
 }

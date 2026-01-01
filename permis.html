@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-École Horizon | Les Permis</title>
+    <title>Nos Formations au Permis | Auto École TRANSMISSION</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +12,9 @@
 <body>
 
     <header>
-        <h1><i class="fas fa-car-side"></i> Horizon</h1>
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Logo Auto École Transmission" class="logo">
+        </a>
         <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
             <ul id="nav-links">
@@ -21,41 +23,53 @@
                 <li><a href="horaires.html">Horaires</a></li>
                 <li><a href="permis.html">Permis</a></li>
                 <li><a href="apropos.html">À propos</a></li>
-                <li><a href="contact.html" class="cta-btn">Inscription</a></li>
+                <li><a href="contact.html" class="cta-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="page-title">
-        <h2>Nos Formations</h2>
+        <h2>Détail des Formations</h2>
+        <p>Chez TRANSMISSION, choisissez la voie qui vous correspond.</p>
     </div>
 
     <section class="bloc">
         <div class="cards">
             <div class="card" style="text-align:left;">
-                <h3><i class="fas fa-car"></i> Permis B (Traditionnel)</h3>
-                <p>Le permis classique. Formation théorique (code) et pratique (conduite) pour apprendre à circuler en
-                    toute sécurité.</p>
-                <p>Dispo en <strong>Boîte Manuelle</strong> ou <strong>Automatique</strong>.</p>
+                <h3 style="display:flex; align-items:center;"><i class="fas fa-car"
+                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0;"></i>
+                    Permis B (Traditionnel)</h3>
+                <p>Le permis classique pour une formation complète. Apprentissage du code de la route puis formation
+                    pratique à la conduite pour circuler en toute sécurité.</p>
+                <p style="margin-top:15px;">Disponible en <strong>Boîte Manuelle</strong> ou <strong>Boîte
+                        Automatique</strong> (formation plus rapide).</p>
+            </div>
+
+            <div class="card" style="text-align:left; border-color: var(--accent);">
+                <h3 style="display:flex; align-items:center;"><i class="fas fa-users"
+                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0; background:var(--accent);"></i>
+                    Conduite Accompagnée (AAC)</h3>
+                <p>Accessible dès 15 ans. Après la formation initiale en auto-école et l'obtention du code, l'élève
+                    conduit avec ses parents pendant un an minimum.</p>
+                <p style="margin-top:15px;"><strong>Avantages :</strong> Meilleure expérience, période probatoire
+                    réduite à 2 ans, coût d'assurance jeune conducteur réduit.</p>
             </div>
 
             <div class="card" style="text-align:left;">
-                <h3><i class="fas fa-users"></i> Conduite Accompagnée (AAC)</h3>
-                <p>Accessible dès 15 ans. Après une formation initiale, l'élève conduit avec ses parents. </p>
-                <p>Permet d'acquérir plus d'expérience, réduit la période probatoire à 2 ans et diminue le coût de
-                    l'assurance.</p>
-            </div>
-
-            <div class="card" style="text-align:left;">
-                <h3><i class="fas fa-sync"></i> Conduite Supervisée</h3>
-                <p>Pour les élèves de plus de 18 ans. Idéal pour ceux qui veulent conduire avec un accompagnateur avant
-                    de passer l'examen ou après un échec, sans limite de durée ni de kilométrage.</p>
+                <h3 style="display:flex; align-items:center;"><i class="fas fa-sync-alt"
+                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0;"></i>
+                    Conduite Supervisée</h3>
+                <p>Pour les élèves de 18 ans et plus. Idéal pour ceux qui souhaitent acquérir de l'expérience avec un
+                    accompagnateur avant de passer l'examen, ou après un échec.</p>
+                <p style="margin-top:15px;">Sans durée ni kilométrage minimum imposés, c'est la solution flexible pour
+                    gagner en confiance.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Auto-École Horizon. Tous droits réservés.</p>
+        <p>© 2025 Auto École TRANSMISSION - Lyon 69009. Tous droits réservés.</p>
+        <p><a href="mentions-legales.html">Mentions Légales</a></p>
     </footer>
 
     <script src="js/script.js"></script>
