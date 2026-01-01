@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Formations au Permis | Auto École TRANSMISSION</title>
+    <title>Nos Formations | Auto École TRANSMISSION</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
 
     <header>
         <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Logo Auto École Transmission" class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
         </a>
         <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
@@ -22,48 +22,59 @@
                 <li><a href="offres.html">Offres</a></li>
                 <li><a href="horaires.html">Horaires</a></li>
                 <li><a href="permis.html">Permis</a></li>
-                <li><a href="apropos.html">À propos</a></li>
                 <li><a href="contact.html" class="cta-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="page-title">
-        <h2>Détail des Formations</h2>
-        <p>Chez TRANSMISSION, choisissez la voie qui vous correspond.</p>
+        <h2>Détail des <span>Formations</span></h2>
+        <p>Quelle voie choisirez-vous pour votre liberté ?</p>
     </div>
 
-    <section class="bloc">
-        <div class="cards">
-            <div class="card" style="text-align:left;">
-                <h3 style="display:flex; align-items:center;"><i class="fas fa-car"
-                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0;"></i>
-                    Permis B (Manuelle)</h3>
-                <p>Le permis classique. Formation de <strong>20 heures minimum</strong> obligatoire.</p>
-                <p style="margin-top:15px;">Apprentissage complet de la mécanique et de l'environnement routier.</p>
+    <section class="container">
+        <div class="grid-cards">
+
+            <div class="card">
+                <i class="fas fa-car icon-header"></i>
+                <h3>Permis B (Manuelle)</h3>
+                <p>La formation de référence. Apprenez à maîtriser le véhicule, les vitesses et l'embrayage pour une
+                    conduite complète.</p>
+                <ul>
+                    <li><i class="fas fa-clock"></i> <strong>20h minimum</strong> obligatoire</li>
+                    <li><i class="fas fa-check"></i> Valable sur tous véhicules</li>
+                </ul>
             </div>
 
-            <div class="card" style="text-align:left;">
-                <h3 style="display:flex; align-items:center;"><i class="fas fa-bolt"
-                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0; background:var(--secondary);"></i>
-                    Permis B (Automatique)</h3>
-                <p>Une formation plus rapide et plus simple : seulement <strong>13 heures minimum</strong>.</p>
-                <p style="margin-top:15px;">Possibilité de convertir en permis manuel plus tard avec une passerelle de
-                    7h.</p>
+            <div class="card" style="border-top-color:var(--accent);">
+                <i class="fas fa-bolt icon-header" style="background:var(--accent);"></i>
+                <h3>Permis B (Automatique)</h3>
+                <p>L'avenir de la conduite. Plus simple, plus rapide, concentrez-vous uniquement sur la route et
+                    l'environnement.</p>
+                <ul>
+                    <li><i class="fas fa-clock"></i> <strong>13h minimum</strong> seulement</li>
+                    <li><i class="fas fa-check"></i> Formation moins chère</li>
+                    <li><i class="fas fa-sync-alt"></i> Convertible en manuel (passerelle 7h)</li>
+                </ul>
             </div>
 
-            <div class="card" style="text-align:left; border-color: var(--accent);">
-                <h3 style="display:flex; align-items:center;"><i class="fas fa-users"
-                        style="width:40px; height:40px; line-height:40px; font-size:1rem; margin:0 15px 0 0; background:var(--accent);"></i>
-                    Conduite Accompagnée (AAC)</h3>
-                <p>Accessible dès 15 ans. Formation initiale de 20h + Code, puis conduite avec les parents.</p>
-                <p style="margin-top:15px;"><strong>Inclus :</strong> 2 Rendez-vous pédagogiques obligatoires.</p>
+            <div class="card" style="border-top-color:var(--secondary);">
+                <i class="fas fa-users icon-header" style="background:var(--secondary);"></i>
+                <h3>Conduite Accompagnée</h3>
+                <p>Accessible dès 15 ans. Après la formation initiale, conduisez avec vos parents pour gagner en
+                    expérience.</p>
+                <ul>
+                    <li><i class="fas fa-shield-alt"></i> Période probatoire réduite (2 ans)</li>
+                    <li><i class="fas fa-percentage"></i> Assurance moins chère</li>
+                    <li><i class="fas fa-trophy"></i> Meilleur taux de réussite</li>
+                </ul>
             </div>
+
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Auto École TRANSMISSION - Lyon 69009. Tous droits réservés.</p>
+        <p>© 2026 Auto École TRANSMISSION - Lyon 69009</p>
         <p><a href="mentions-legales.html">Mentions Légales</a></p>
     </footer>
 

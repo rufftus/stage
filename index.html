@@ -4,26 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto École TRANSMISSION | Permis de conduire à Lyon 9</title>
+    <title>Auto École TRANSMISSION | Lyon 9</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .promo-banner {
-            background: linear-gradient(45deg, #3b82f6, #16a34a);
+            background: var(--secondary);
             color: white;
             text-align: center;
             padding: 15px;
+            font-weight: 500;
+        }
+
+        .promo-banner span {
+            color: var(--primary);
             font-weight: bold;
-            font-size: 1.1rem;
         }
     </style>
 </head>
 
 <body>
 
+    <div class="promo-banner">
+        <i class="fas fa-trophy" style="color:var(--accent);"></i> JEU CONCOURS : 3 questions du code justes = <span>10€
+            offerts</span> sur l'évaluation !
+    </div>
+
     <header>
         <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Logo Auto École Transmission" class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
         </a>
         <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <nav>
@@ -32,53 +41,52 @@
                 <li><a href="offres.html">Offres</a></li>
                 <li><a href="horaires.html">Horaires</a></li>
                 <li><a href="permis.html">Permis</a></li>
-                <li><a href="apropos.html">À propos</a></li>
                 <li><a href="contact.html" class="cta-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="promo-banner">
-        <i class="fas fa-trophy"></i> JEU CONCOURS : Répondez à 3 questions du code et GAGNEZ 10€ sur votre heure
-        d'évaluation !
-    </div>
-
     <section class="hero">
         <h2 style="text-transform:uppercase;">Nouvelle Ouverture Lyon 9</h2>
-        <p style="font-size:1.5rem; margin-bottom:10px;">Forfait à partir de <strong>510 €</strong></p>
-        <p>Heure de conduite à partir de <strong>41 €</strong></p>
+        <p>Votre permis sur-mesure au 12 Rue de Bourgogne.</p>
 
-        <div style="margin-top:30px;">
-            <a href="offres.html" class="btn-hero">Voir les formules</a>
-            <a href="contact.html" class="btn-hero"
-                style="background:var(--white); color:var(--primary); margin-left:15px;">Nous contacter</a>
+        <div
+            style="background:rgba(255,255,255,0.1); padding:20px; border-radius:15px; display:inline-block; margin-bottom:30px; backdrop-filter:blur(5px);">
+            <p style="margin:0; font-size:1.4rem;">Forfait dès <strong>510 €</strong></p>
+            <p style="margin:0; font-size:1.1rem;">Heure dès <strong>41 €</strong></p>
         </div>
+        <br>
+
+        <a href="offres.html" class="btn-hero">Voir les Tarifs</a>
+        <a href="contact.html" class="btn-hero btn-outline">Nous contacter</a>
     </section>
 
-    <section class="bloc">
-        <h2>Pourquoi choisir TRANSMISSION ?</h2>
-        <div class="cards">
+    <section class="container" style="margin-top:60px;">
+        <div class="page-title" style="padding-top:0;">
+            <h2>Pourquoi choisir <span>Transmission</span> ?</h2>
+        </div>
+
+        <div class="grid-cards">
             <div class="card">
-                <i class="fas fa-piggy-bank"></i>
-                <h3>Tarifs Attractifs</h3>
-                <p>Des forfaits adaptés : Permis B dès 510€ en pack, et formation complète Boîte Auto dès 800€.</p>
+                <i class="fas fa-piggy-bank icon-header"></i>
+                <h3>Prix Attractifs</h3>
+                <p>Des formules claires avec ou sans code, en manuelle ou automatique, adaptées à votre budget.</p>
             </div>
             <div class="card">
-                <i class="fas fa-gamepad" style="background: var(--accent);"></i>
+                <i class="fas fa-gamepad icon-header" style="background:var(--accent);"></i>
                 <h3>Ludique</h3>
-                <p>Venez nous voir en agence ! Si vous franchissez la porte et répondez juste à 3 questions de code,
-                    vous gagnez une remise immédiate.</p>
+                <p>Apprenez en vous amusant ! Passez nous voir pour tester vos connaissances et gagner des remises.</p>
             </div>
             <div class="card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Au Cœur de Lyon 9</h3>
-                <p>Situé au 12 Rue de Bourgogne, arrêt de métro <strong>Valmy</strong>.</p>
+                <i class="fas fa-map-marker-alt icon-header" style="background:var(--secondary);"></i>
+                <h3>Proximité</h3>
+                <p>Au cœur de Lyon 9, arrêt de métro Valmy. Horaires flexibles de 8h à 20h pour la conduite.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Auto École TRANSMISSION - Lyon 69009. Tous droits réservés.</p>
+        <p>© 2026 Auto École TRANSMISSION - Lyon 69009</p>
         <p><a href="mentions-legales.html">Mentions Légales</a></p>
     </footer>
 

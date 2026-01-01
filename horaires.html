@@ -7,6 +7,34 @@
     <title>Horaires & Accès | Auto École TRANSMISSION Lyon 9</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Petit style spécifique pour la liste des horaires afin qu'elle soit très propre */
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list li span {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .hours-list li strong {
+            color: var(--primary);
+        }
+
+        .hours-list li.closed strong {
+            color: #ef4444;
+            /* Rouge pour fermé */
+        }
+    </style>
 </head>
 
 <body>
@@ -22,62 +50,86 @@
                 <li><a href="offres.html">Offres</a></li>
                 <li><a href="horaires.html">Horaires</a></li>
                 <li><a href="permis.html">Permis</a></li>
-                <li><a href="apropos.html">À propos</a></li>
                 <li><a href="contact.html" class="cta-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="page-title">
-        <h2>Nos Horaires & Plan d'accès</h2>
+        <h2>Horaires & <span>Accès</span></h2>
         <p>Retrouvez-nous au 12 Rue de Bourgogne, Lyon 9 (Métro Valmy).</p>
     </div>
 
-    <section class="bloc">
-        <div class="cards">
+    <section class="container">
+        <div class="grid-cards">
+
             <div class="card">
-                <i class="fas fa-clock"></i>
-                <h3>Horaires d'Ouverture</h3>
-                <p style="margin-top:20px; font-weight:bold; color:var(--primary);">
-                    Avant 16h00 : Sur RDV uniquement
+                <i class="fas fa-clock icon-header"></i>
+                <h3>Bureau</h3>
+                <p
+                    style="margin-bottom:15px; font-size:0.9rem; background:#f0fdf4; padding:8px; border-radius:6px; color:var(--primary-dark); text-align:center;">
+                    <i class="fas fa-info-circle"></i> <strong>Avant 16h00 :</strong> Sur RDV uniquement
                 </p>
-                <div style="margin-top:15px; text-align:left; display:inline-block;">
-                    <p><strong>Lundi :</strong> 16h00 - 19h00</p>
-                    <p><strong>Mardi :</strong> 16h00 - 19h00</p>
-                    <p><strong>Mercredi :</strong> Sur RDV</p>
-                    <p><strong>Jeudi :</strong> 16h00 - 19h00</p>
-                    <p><strong>Vendredi :</strong> 16h00 - 19h00</p>
-                    <p><strong>Samedi :</strong> 16h00 - 19h00</p>
-                    <p><strong>Dimanche :</strong> Fermé</p>
-                </div>
+                <ul class="hours-list">
+                    <li><span>Lundi</span> <strong>16h00 - 19h00</strong></li>
+                    <li><span>Mardi</span> <strong>16h00 - 19h00</strong></li>
+                    <li><span>Mercredi</span> <strong style="color:var(--accent);">Sur RDV</strong></li>
+                    <li><span>Jeudi</span> <strong>16h00 - 19h00</strong></li>
+                    <li><span>Vendredi</span> <strong>16h00 - 19h00</strong></li>
+                    <li><span>Samedi</span> <strong>16h00 - 19h00</strong></li>
+                    <li class="closed"><span>Dimanche</span> <strong>Fermé</strong></li>
+                </ul>
             </div>
 
             <div class="card">
-                <i class="fas fa-car" style="background: var(--accent);"></i>
+                <i class="fas fa-car icon-header" style="background:var(--accent);"></i>
                 <h3>Leçons de Conduite</h3>
-                <p style="margin-top:20px;">
-                    Nos moniteurs sont disponibles sur une large amplitude horaire.<br>
-                    Contactez-nous pour planifier vos heures selon vos disponibilités.
-                </p>
+                <p>Nos moniteurs s'adaptent à votre emploi du temps pour assurer votre formation.</p>
+
+                <div
+                    style="background:#f8fafc; padding:20px; border-radius:10px; text-align:center; margin-top:20px; border:1px solid #e2e8f0;">
+                    <h4 style="margin-bottom:10px; font-size:1rem; color:#64748b;">Amplitude Horaire</h4>
+                    <div style="font-size:1.8rem; font-weight:800; color:var(--primary); line-height:1;">08h - 20h</div>
+                    <div style="font-size:0.9rem; margin-top:5px; font-weight:600;">Du Lundi au Samedi</div>
+                </div>
+
+                <a href="contact.html" class="btn-hero"
+                    style="margin-top:20px; text-align:center; width:100%; font-size:0.9rem;">Réserver une leçon</a>
             </div>
 
             <div class="card">
-                <i class="fas fa-map-marked-alt"></i>
+                <i class="fas fa-map-marked-alt icon-header" style="background:var(--secondary);"></i>
                 <h3>Nous Trouver</h3>
-                <p style="margin-top:20px; font-size: 1.1rem;">
-                    <strong>Auto École TRANSMISSION</strong><br>
-                    12 Rue de Bourgogne<br>
-                    69009 LYON<br>
-                    <em>(Arrêt de métro Valmy)</em>
+                <p style="font-size:1.1rem; font-weight:600; color:var(--secondary);">
+                    12 Rue de Bourgogne<br>69009 LYON
                 </p>
-                <a href="contact.html" class="btn-hero"
-                    style="font-size:0.9rem; margin-top:25px; width:100%; text-align:center;">Nous contacter</a>
+                <ul class="hours-list" style="margin-top:10px;">
+                    <li style="border:none; padding:5px 0;"><i class="fas fa-subway"
+                            style="color:var(--primary); width:20px;"></i> Métro D : Arrêt <strong>Valmy</strong></li>
+                    <li style="border:none; padding:5px 0;"><i class="fas fa-bus"
+                            style="color:var(--primary); width:20px;"></i> Bus : Arrêt <strong>Place de Paris</strong>
+                    </li>
+                </ul>
+                <a href="https://www.google.com/maps/dir//12+Rue+de+Bourgogne,+69009+Lyon" target="_blank"
+                    class="btn-hero"
+                    style="background:var(--secondary); text-align:center; width:100%; margin-top:auto;">Itinéraire
+                    GPS</a>
             </div>
+
+        </div>
+    </section>
+
+    <section class="container" style="padding-top:0;">
+        <div
+            style="border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); height:450px; border:5px solid var(--white);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.684762922765!2d4.803!3d45.777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb650c441637%3A0x!2s12+Rue+de+Bourgogne%2C+69009+Lyon!5e0!3m2!1sfr!2sfr!4v1"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Auto École TRANSMISSION - Lyon 69009. Tous droits réservés.</p>
+        <p>© 2026 Auto École TRANSMISSION - Lyon 69009</p>
         <p><a href="mentions-legales.html">Mentions Légales</a></p>
     </footer>
 
